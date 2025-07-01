@@ -1,66 +1,22 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ... manter estilos anteriores ... */
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-header {
-  background-color: #111;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-.catalogo {
+.filtros {
   display: flex;
   flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
   justify-content: center;
-  gap: 20px;
-  padding: 40px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
 }
 
-.card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  width: 280px;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.03);
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.card .info {
-  padding: 15px;
-}
-
-.card h3 {
-  margin-bottom: 8px;
-}
-
-.card .preco {
-  color: green;
-  font-size: 18px;
+.filtros label {
   font-weight: bold;
+  margin-right: 5px;
 }
 
-footer {
-  background-color: #111;
-  color: white;
-  text-align: center;
-  padding: 15px;
+.filtros select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #999;
 }
