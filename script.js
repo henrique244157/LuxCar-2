@@ -1,39 +1,69 @@
 const carros = [
   {
-    nome: "BMW 320i 2020",
-    preco: "R$ 120.000",
-    imagem: "https://images.unsplash.com/photo-1605559424843-64d0f457c1c2"
+    nome: "Nissan GT-R R34",
+    preco: 400000,
+    marca: "Nissan",
+    imagem: "https://cdn.pixabay.com/photo/2020/02/28/16/17/nissan-4886585_960_720.jpg"
   },
   {
-    nome: "Chevrolet Onix 2021",
-    preco: "R$ 75.000",
-    imagem: "https://images.unsplash.com/photo-1597002850383-c938469b54ff"
+    nome: "Toyota Supra MK4",
+    preco: 380000,
+    marca: "Toyota",
+    imagem: "https://cdn.pixabay.com/photo/2021/04/18/15/12/toyota-supra-6187993_960_720.jpg"
   },
   {
-    nome: "Jeep Compass 2022",
-    preco: "R$ 150.000",
-    imagem: "https://images.unsplash.com/photo-1616788463731-c9245fc9e1d0"
+    nome: "Mitsubishi Lancer Evo",
+    preco: 320000,
+    marca: "Mitsubishi",
+    imagem: "https://cdn.pixabay.com/photo/2016/11/21/15/42/mitsubishi-1848973_960_720.jpg"
   },
   {
-    nome: "Toyota Corolla 2023",
-    preco: "R$ 135.000",
-    imagem: "https://images.unsplash.com/photo-1616788881951-6e8262d4c0a5"
+    nome: "Nissan 350Z",
+    preco: 310000,
+    marca: "Nissan",
+    imagem: "https://cdn.pixabay.com/photo/2017/08/20/00/34/nissan-2667877_960_720.jpg"
   }
 ];
 
 const catalogo = document.getElementById("catalogo");
+const filtroMarca = document.getElementById("marca");
+const filtroPreco = document.getElementById("preco");
 
-carros.forEach(carro => {
-  const card = document.createElement("div");
-  card.className = "card";
-
-  card.innerHTML = `
-    <img src="${carro.imagem}" alt="${carro.nome}">
-    <div class="info">
+function renderizarCarros(lista) {
+  catalogo.innerHTML = "";
+  lista.forEach(carro => {
+    const div = document.createElement("div");
+    div.className = "carro";
+    div.innerHTML = `
+      <img src="${carro.imagem}" alt="${carro.nome}">
       <h3>${carro.nome}</h3>
-      <p class="preco">${carro.preco}</p>
-    </div>
-  `;
+      <p>Preço: R$ ${carro.preco.toLocaleString()}</p>
+      <button>Comprar</button>
+    `;
+    catalogo.appendChild(div);
+  });
+}
 
-  catalogo.appendChild(card);
-});
+function filtrarCarros() {
+  const marcaSelecionada = filtroMarca.value;
+  const precoSelecionado = filtroPreco.value;
+
+  const carrosFiltrados = carros.filter(carro => {
+    const condMarca = marcaSelecionada === "todos" || carro.marca === marcaSelecionada;
+
+    let condPreco = true;
+    if (precoSelecionado === "baixo") condPreco = carro.preco <= 350000;
+    else if (precoSelecionado === "medio") condPreco = carro.preco <= 400000;
+    else if (precoSelecionado === "alto") condPreco = carro.preco > 400000;
+
+    return condMarca && condPreco;
+  });
+
+  renderizarCarros(carrosFiltrados);
+}
+
+filtroMarca.addEventListener("change", filtrarCarros);
+filtroPreco.addEventListener("change", filtrarCarros);
+
+// Inicial
+renderizarCarros(carros);
