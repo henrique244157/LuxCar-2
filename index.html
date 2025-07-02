@@ -3,35 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Catálogo de Carros</title>
+  <title>Loja de Carros JDM</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Loja de Carros JDM</h1>
+    <h1>JDM Motors</h1>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Catálogo</a>
+      <a href="#">Contato</a>
+    </nav>
   </header>
 
-  <section class="filtros">
-    <label for="marca">Marca:</label>
-    <select id="marca">
-      <option value="todos">Todos</option>
-      <option value="Nissan">Nissan</option>
-      <option value="Toyota">Toyota</option>
-      <option value="Mitsubishi">Mitsubishi</option>
-    </select>
-
-    <label for="preco">Preço:</label>
-    <select id="preco">
-      <option value="todos">Todos</option>
-      <option value="baixo">Até R$350.000</option>
-      <option value="medio">Até R$400.000</option>
-      <option value="alto">Acima de R$400.000</option>
-    </select>
+  <section class="banner">
+    <h2>Bem-vindo à melhor loja JDM do Brasil!</h2>
+    <p>Carros importados e exclusivos do Japão.</p>
   </section>
 
-  <main class="catalogo" id="catalogo">
-    <!-- Carros aparecerão aqui -->
+  <main class="carros">
+    <div class="carro">
+      <img src="https://cdn.pixabay.com/photo/2020/02/28/16/17/nissan-4886585_960_720.jpg" alt="Nissan GT-R">
+      <h3>Nissan GT-R R34</h3>
+      <p>Preço: R$ 400.000</p>
+      <button onclick="comprar('Nissan GT-R R34')">Comprar</button>
+    </div>
+
+    <div class="carro">
+      <img src="https://cdn.pixabay.com/photo/2021/04/18/15/12/toyota-supra-6187993_960_720.jpg" alt="Toyota Supra">
+      <h3>Toyota Supra MK4</h3>
+      <p>Preço: R$ 380.000</p>
+      <button onclick="comprar('Toyota Supra MK4')">Comprar</button>
+    </div>
+
+    <div class="carro">
+      <img src="https://cdn.pixabay.com/photo/2016/11/21/15/42/mitsubishi-1848973_960_720.jpg" alt="Mitsubishi Lancer">
+      <h3>Mitsubishi Lancer Evo</h3>
+      <p>Preço: R$ 350.000</p>
+      <button onclick="comprar('Mitsubishi Lancer Evo')">Comprar</button>
+    </div>
   </main>
+
+  <footer>
+    <p>© 2025 JDM Motors - Todos os direitos reservados</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
