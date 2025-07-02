@@ -1,22 +1,101 @@
-/* ... manter estilos anteriores ... */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.filtros {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+header {
+  background-color: #111;
+  color: white;
   padding: 20px;
-  justify-content: center;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
+  text-align: center;
 }
 
-.filtros label {
-  font-weight: bold;
-  margin-right: 5px;
+nav {
+  margin-top: 10px;
 }
 
-.filtros select {
-  padding: 5px;
+nav a {
+  margin: 0 15px;
+  color: #ccc;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+.banner {
+  background: url('https://cdn.pixabay.com/photo/2020/02/24/17/16/car-4876652_960_720.jpg') center/cover no-repeat;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.banner h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.carros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.carro {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.carro:hover {
+  transform: scale(1.02);
+}
+
+.carro img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.carro h3 {
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.carro p {
+  padding: 0 10px;
+  color: #555;
+}
+
+.carro button {
+  margin: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
   border-radius: 5px;
-  border: 1px solid #999;
+  cursor: pointer;
+}
+
+.carro button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
 }
