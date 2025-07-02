@@ -21,7 +21,7 @@ const carros = [
     nome: "Nissan 350Z",
     preco: 310000,
     marca: "Nissan",
-    imagem: "https://cdn.pixabay.com/photo/2017/08/20/00/34/nissan-2667877_960_720.jpg"
+    imagem: "IMG LUIZ"
   }
 ];
 
